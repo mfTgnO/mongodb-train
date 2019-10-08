@@ -1,0 +1,49 @@
+GET http://localhost:8089/department
+
+
+###
+GET http://localhost:8089/department/page
+
+
+###
+
+POST http://localhost:8089/department
+Content-Type: text/plain
+
+{
+  "name": "JohnDoe",
+  "description": "description"
+}
+
+###
+
+POST http://localhost:8089/department?name=假以溢我，我其收之。&description=骏惠我文王，曾孙笃之。
+Accept: text/plain
+Cache-Control: no-cache
+
+###
+
+PUT http://localhost:8089/department?id=5d95f1d396ca8e449ce9ed00&name=一泓清可沁诗脾&description=冷暖年来只自知
+Accept: text/plain
+Cache-Control: no-cache
+
+###
+
+DELETE http://localhost:8089/department?id=5d95948796ca8e37b8f31b45
+Accept: text/plain
+Cache-Control: no-cache
+
+###
+GET http://localhost:8089/department/findAll
+
+
+###
+#GET http://localhost:8089/department/findByName?name=维天之命，於穆不已。
+GET http://localhost:8089/department/findByName?name=aaa
+
+
+###
+GET http://localhost:8089/department/findByRegex
+
+
+###
