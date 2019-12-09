@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
  * @createDate: 2019-10-03 11:08
  * @description:
  */
-@Document("Employee")
+@Document("employee")
 @Data
 public class Employee {
     @Id

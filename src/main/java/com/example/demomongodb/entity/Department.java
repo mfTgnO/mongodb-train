@@ -10,7 +10,7 @@ import java.util.List;
  * @createDate: 2019-10-03 11:06
  * @description:
  */
-@Document("Department")
+@Document("department")
 @Data
 public class Department {
     @Id
