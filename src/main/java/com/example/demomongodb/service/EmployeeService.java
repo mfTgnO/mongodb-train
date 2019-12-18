@@ -13,6 +13,8 @@ public interface EmployeeService {
 
     Employee insert(Employee employee);
 
+    void insertAll();
+
     List<Employee> findLessThan();
 
     List<Employee> findGreaterThan();

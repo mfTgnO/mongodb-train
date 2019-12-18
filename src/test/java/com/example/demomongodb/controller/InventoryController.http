@@ -1,0 +1,27 @@
+# findAll
+GET http://localhost:8089/inventory
+
+###
+POST http://localhost:8089/inventory
+#Accept: text/plain
+#Cache-Control: no-cache
+
+###
+POST http://localhost:8089/inventory/huge
+
+###
+GET http://localhost:8089/inventory/findLessThan
+
+###
+GET http://localhost:8089/inventory/findGreaterThan
+
+###
+GET http://localhost:8089/inventory/findLessThanAndGreaterThan
+
+###
+GET http://localhost:8089/inventory/sort
+
+###
+GET http://localhost:8089/inventory/pageable
+
+###

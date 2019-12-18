@@ -11,7 +11,10 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.UUID;
 
 /**
  * @createDate: 2019-10-08 14:23
@@ -34,6 +37,21 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee insert(Employee employee) {
         employee.setDateTime(LocalDateTime.now());
         return mongoTemplate.insert(employee);
+    }
+
+    @Override
+    public void insertAll() {
+        ArrayList<Employee> list = new ArrayList<>();
+        Random random = new Random();
+        for (int i = 0; i < 10000; i++) {
+            Employee employee = new Employee();
+            employee.setAge(random.nextInt(100) + 1);
+            employee.setName(UUID.randomUUID().toString());
+            employee.setSalary((random.nextInt(100) + 1) * 100);
+            employee.setDateTime(LocalDateTime.now());
+            list.add(employee);
+        }
+        mongoTemplate.insertAll(list);
     }
 
     /**

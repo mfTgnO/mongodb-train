@@ -35,6 +35,12 @@ public class EmployeeController {
         return new JsonResult<>(insert);
     }
 
+    @PostMapping("/huge")
+    public JsonResult insertHuge() {
+        employeeService.insertAll();
+        return new JsonResult<>();
+    }
+
     @GetMapping("/findLessThan")
     public JsonResult findLessThan() {
         List<Employee> list = employeeService.findLessThan();
