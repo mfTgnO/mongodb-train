@@ -3,10 +3,7 @@ package com.example.demomongodb.controller;
 import com.example.demomongodb.entity.Employee;
 import com.example.demomongodb.service.EmployeeService;
 import com.example.demomongodb.util.JsonResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,6 +36,87 @@ public class EmployeeController {
     public JsonResult insertHuge() {
         employeeService.insertAll();
         return new JsonResult<>();
+    }
+
+    @GetMapping("/age")
+    public JsonResult findByAge(@RequestParam Integer age) {
+        List<Employee> list = employeeService.is(age);
+        JsonResult<Object> jsonResult = new JsonResult<>();
+        jsonResult.setData(list);
+        jsonResult.setTotal(list.size());
+        return jsonResult;
+    }
+
+    @GetMapping("/age.ne")
+    public JsonResult ne(@RequestParam Integer age) {
+        List<Employee> list = employeeService.ne(age);
+        JsonResult<Object> jsonResult = new JsonResult<>();
+        jsonResult.setData(list);
+        jsonResult.setTotal(list.size());
+        return jsonResult;
+    }
+
+    @GetMapping("/age.in")
+    public JsonResult in(@RequestParam List<Integer> age) {
+        List<Employee> list = employeeService.in(age);
+        JsonResult<Object> jsonResult = new JsonResult<>();
+        jsonResult.setData(list);
+        jsonResult.setTotal(list.size());
+        return jsonResult;
+    }
+
+    @GetMapping("/age.nin")
+    public JsonResult nin(@RequestParam List<Integer> age) {
+        List<Employee> list = employeeService.nin(age);
+        JsonResult<Object> jsonResult = new JsonResult<>();
+        jsonResult.setData(list);
+        jsonResult.setTotal(list.size());
+        return jsonResult;
+    }
+
+    @GetMapping("/age.mod")
+    public JsonResult mod() {
+        List<Employee> list = employeeService.mod();
+        JsonResult<Object> jsonResult = new JsonResult<>();
+        jsonResult.setData(list);
+        jsonResult.setTotal(list.size());
+        return jsonResult;
+    }
+
+    @GetMapping("/age.all")
+    public JsonResult all() {
+        List<Employee> list = employeeService.all();
+        JsonResult<Object> jsonResult = new JsonResult<>();
+        jsonResult.setData(list);
+        jsonResult.setTotal(list.size());
+        return jsonResult;
+    }
+
+    @GetMapping("/age.size")
+    public JsonResult size(@RequestParam Integer size) {
+        List<Employee> list = employeeService.size(size);
+        JsonResult<Object> jsonResult = new JsonResult<>();
+        jsonResult.setData(list);
+        jsonResult.setTotal(list.size());
+        return jsonResult;
+    }
+
+    @GetMapping("/age.exists")
+    public JsonResult exists() {
+        List<Employee> list = employeeService.exists();
+        JsonResult<Object> jsonResult = new JsonResult<>();
+        jsonResult.setData(list);
+        jsonResult.setTotal(list.size());
+        return jsonResult;
+    }
+
+    @GetMapping("/age.type")
+    public JsonResult type() {
+        List<Employee> list = employeeService.type();
+        JsonResult<Object> jsonResult = new JsonResult<>();
+        jsonResult.setData(list);
+        jsonResult.setTotal(list.size());
+        return jsonResult;
     }
 
     @GetMapping("/findLessThan")

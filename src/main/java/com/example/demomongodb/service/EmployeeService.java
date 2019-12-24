@@ -15,6 +15,24 @@ public interface EmployeeService {
 
     void insertAll();
 
+    List<Employee> is(Integer age);
+
+    List<Employee> ne(Integer age);
+
+    List<Employee> in(List<Integer> age);
+
+    List<Employee> nin(List<Integer> age);
+
+    List<Employee> mod();
+
+    List<Employee> all();
+
+    List<Employee> size(Integer size);
+
+    List<Employee> exists();
+
+    List<Employee> type();
+
     List<Employee> findLessThan();
 
     List<Employee> findGreaterThan();

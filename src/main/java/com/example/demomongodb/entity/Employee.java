@@ -1,12 +1,12 @@
 package com.example.demomongodb.entity;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.List;
 
 /**
  * @createDate: 2019-10-03 11:08
@@ -21,4 +21,6 @@ public class Employee {
     private int age;
     private double salary;
     private LocalDateTime dateTime;
+    private HashSet<String> tags;
+    private String exists;
 }

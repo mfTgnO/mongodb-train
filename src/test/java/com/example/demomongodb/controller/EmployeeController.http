@@ -25,3 +25,30 @@ GET http://localhost:8089/employee/sort
 GET http://localhost:8089/employee/pageable
 
 ###
+GET http://localhost:8089/employee/age?age=31
+
+###
+GET http://localhost:8089/employee/age.ne?age=31
+
+###
+GET http://localhost:8089/employee/age.in?age=31,81,76
+
+###
+GET http://localhost:8089/employee/age.nin?age=31,81,76
+
+###
+GET http://localhost:8089/employee/age.mod
+
+###
+GET http://localhost:8089/employee/age.all
+
+###
+GET http://localhost:8089/employee/age.size?size=0
+
+###
+GET http://localhost:8089/employee/age.exists
+
+###
+GET http://localhost:8089/employee/age.type
+
+###
