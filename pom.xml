@@ -44,6 +44,14 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <!--https://github.com/google/guava-->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.2-jre</version>
+            <!-- or, for Android: -->
+            <!--<version>28.2-android</version>-->
+        </dependency>
     </dependencies>
 
     <build>
